@@ -1,0 +1,159 @@
+{
+  "v": 2,
+  "name": "ETUR - Service",
+  "folders": [],
+  "requests": [
+    {
+      "v": "1",
+      "endpoint": "http://localhost:3456/reports",
+      "name": "All Reports",
+      "params": [
+        { "key": "category", "value": "Feedback", "active": true },
+        { "key": "customerId", "value": "123", "active": true }
+      ],
+      "headers": [],
+      "method": "GET",
+      "auth": { "authType": "none", "authActive": true },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": { "contentType": null, "body": null }
+    },
+    {
+      "v": "1",
+      "endpoint": "http://localhost:3456/reports/4",
+      "name": "Report by Id",
+      "params": [],
+      "headers": [],
+      "method": "GET",
+      "auth": { "authType": "none", "authActive": true },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": null,
+        "body": "{\n  \"category\": \"Feedback\",\n  \"customerId\": \"321\",\n  \"description\": \"Something went wrong\"\n}"
+      }
+    },
+    {
+      "v": "1",
+      "endpoint": "http://localhost:3456/reports",
+      "name": "Create Report",
+      "params": [],
+      "headers": [],
+      "method": "POST",
+      "auth": { "authType": "none", "authActive": true },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"category\": \"Feedback\",\n  \"customerId\": \"321\",\n  \"description\": \"Something went wrong\"\n}"
+      }
+    },
+    {
+      "v": "1",
+      "endpoint": "http://localhost:3456/reports/1/labels",
+      "name": "Add Label to Report",
+      "params": [],
+      "headers": [],
+      "method": "POST",
+      "auth": { "authType": "none", "authActive": true },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"label\": \"Test\"\n}"
+      }
+    },
+    {
+      "v": "1",
+      "endpoint": "http://localhost:3456/reports/1/labels",
+      "name": "Remove Label from Report",
+      "params": [],
+      "headers": [],
+      "method": "DELETE",
+      "auth": { "authType": "none", "authActive": true },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"label\": \"Test\"\n}"
+      }
+    },
+    {
+      "v": "1",
+      "endpoint": "http://localhost:3456/reports/1/comments",
+      "name": "Add Comment to Report",
+      "params": [],
+      "headers": [],
+      "method": "POST",
+      "auth": { "authType": "none", "authActive": true },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"author\": \"Jens Reiner\",\n  \"message\": \"Test Comment\",\n  \"type\": \"Developer\"\n}"
+      }
+    },
+    {
+      "v": "1",
+      "endpoint": "http://localhost:3456/reports/2/state",
+      "name": "Change Report State ",
+      "params": [],
+      "headers": [],
+      "method": "PATCH",
+      "auth": { "authType": "none", "authActive": true },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"state\": \"CLOSED\",\n  \"reason\": \"Test 123\"\n}"
+      }
+    },
+    {
+      "v": "1",
+      "endpoint": "http://localhost:3456/reports/1/owner",
+      "name": "Change Owner Report",
+      "params": [],
+      "headers": [],
+      "method": "PATCH",
+      "auth": { "authType": "none", "authActive": true },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"owner\": \"Jens Reiner\"\n}"
+      }
+    },
+    {
+      "v": "1",
+      "endpoint": "http://localhost:3456/reports/1/assignement",
+      "name": "Change AssignedTo Report",
+      "params": [],
+      "headers": [],
+      "method": "PATCH",
+      "auth": { "authType": "none", "authActive": true },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"assignedTo\": \"Jens Reiner\"\n}"
+      }
+    },
+    {
+      "v": "1",
+      "endpoint": "http://localhost:3456/reports/1/priority",
+      "name": "Change Priority Report",
+      "params": [],
+      "headers": [],
+      "method": "PATCH",
+      "auth": { "authType": "none", "authActive": true },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"priority\": 2\n}"
+      }
+    }
+  ],
+  "headers": [],
+  "auth": { "authType": "inherit", "authActive": false }
+}
