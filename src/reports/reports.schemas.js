@@ -11,7 +11,20 @@ const reportResponseSchema = {
   closedAt: { type: ["string", "null"] },
   state: { type: "string" },
   priority: { type: ["number", "null"] },
-  comments: { type: "array" },
+  comments: {
+    type: "array",
+    items: {
+      type: "object",
+      properties: {
+        author: { type: "string" },
+        message: { type: "string" },
+        type: {
+          type: "string",
+          enum: ["Customer", "Developer", "Product_Manager"],
+        },
+      },
+    },
+  },
   closeReason: { type: ["string", "null"] },
   references: { type: "array" },
 };
